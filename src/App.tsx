@@ -43,18 +43,19 @@ function App() {
   }
 
   return (
-    <div className="main-container">
-      <span className="title">Unith Test</span>
-      <div className="container">
+    <div className="container">
+      <h1>Unith Test</h1>
+      <ul className="image-gallery">
         {imageList.map((el: Image) => (
           <Card
+            key={el.index}
             image={el.image}
             title={el.title}
             index={el.index}
             description={el.description}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

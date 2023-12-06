@@ -1,58 +1,38 @@
-.main-container {
+.image-gallery {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 2rem;
-}
-
-/* this class for the container*/
-.container {
-  display: flex; /*  set the display to flex*/
-  flex-direction: flex-row; /* set the direction to row*/
-  justify-content: space-around;
-  align-items: stretch;
-  gap: 0.5rem; /* give space between the items*/
-  margin: 0 0.5rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0.5rem;
-  gap: 1rem;
-  background-color: #fffec4;
-  border-radius: 10px;
-  flex: 1; /* set value of flex-grow to 1*/
-  filter: drop-shadow(1px 2px 0.2rem gray);
-}
-
-.description {
+.image-gallery > li {
+  flex-basis: 18%;
+  display: inline-flex;
   position: relative;
-  height: 10rem;
-  display: inline-block;
-  overflow: hidden; /* give ellipsis effect when description too long*/
-  text-overflow: ellipsis;
-  white-space: wrap;
 }
 
-.button {
-  border: 0;
-  padding: 0.4rem 0.9em;
-  border-radius: 10px;
-  font-weight: bold;
-  background-color: #cbffa9;
+.image-gallery li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
 }
 
-.main-image {
-  width: 10rem;
-  height: 10rem;
-  object-fit: contain;
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+/* hover */
+.image-gallery li:hover .overlay {
+  color: black;
+  background-color: white;
 }
