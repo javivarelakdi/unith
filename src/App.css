@@ -1,3 +1,7 @@
+h1 {
+  text-align: center;
+}
+
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +18,7 @@
 .image-gallery li img {
   object-fit: cover;
   max-width: 100%;
-  height: auto;
+  height: -webkit-fill-available;
   vertical-align: middle;
   border-radius: 5px;
   position: relative;
@@ -31,7 +35,25 @@
   border-radius: 5px;
 }
 
+.single-container {
+  padding: 20px;
+}
+
+.single-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-container img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 /* hover */
+.image-gallery li:hover {
+  border: 1px solid red;
+  border-radius: 5px;
+}
 .image-gallery li:hover .overlay {
   color: black;
   background-color: white;

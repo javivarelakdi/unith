@@ -4,10 +4,9 @@ export interface Image {
   image: string;
   title: string;
   description: string;
-  index?: number;
+  index: number;
 }
 export const fetchImages = createAsyncThunk<
-  // Image,
   any[],
   void,
   { rejectValue: string }
@@ -22,7 +21,7 @@ export const fetchImages = createAsyncThunk<
   }
 });
 interface ImagesState {
-  images: any[];
+  images: Image[];
   loading: boolean;
   error: string | null;
 }
@@ -43,7 +42,7 @@ export const imagesSlice = createSlice({
       })
       .addCase(fetchImages.fulfilled, (state, action) => {
         state.loading = false;
-        state.images = action.payload;
+        state.images = action.payload?.sort((a, b) => a.index - b.index);
       })
       .addCase(fetchImages.rejected, (state, action) => {
         state.loading = false;
