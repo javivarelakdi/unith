@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Unith Test</h1>
+      <h1>Unith</h1>
       <Router>
         <Routes>
           <Route path="/" element={<Gallery imageList={imageList} />} />
